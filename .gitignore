@@ -1,0 +1,10 @@
+.env*
+!.env.example
+.vercel/
+node_modules/
+.next/
+*.tsbuildinfo
+supabase/.temp/
+coverage/
+
+/scripts/scan-denylist.local.txt

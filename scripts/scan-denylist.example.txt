@@ -1,0 +1,8 @@
+# Generic secret patterns (grep extended regular expressions, case insensitive).
+# Copy to scan-denylist.local.txt; add your own names, emails and project_ref.
+# Never commit the local denylist or real credentials.
+# JWTs, including Supabase service_role JWTs:
+eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+
+sk-[A-Za-z0-9_-]{20,}
+gho_[A-Za-z0-9]{20,}
+ghp_[A-Za-z0-9]{20,}

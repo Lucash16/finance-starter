@@ -1,0 +1,5 @@
+project_id = "finance-starter"
+[functions.pluggy-sync]
+verify_jwt = false
+[functions.manual-entry]
+verify_jwt = false

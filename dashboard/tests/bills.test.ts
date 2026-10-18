@@ -1,0 +1,11 @@
+import test from "node:test"
+import assert from "node:assert/strict"
+import { groupBills, groupRecentCycles, isUnpaid, parseBillSelection, selectCycles, type BillRow, type CycleRow } from "../lib/bills"
+
+const aid=["00000000", "0000", "4000", "8000", "000000001717"].join("-"),bid=["00000000", "0000", "4000", "8000", "000000001718"].join("-")
+const row=(changes:Partial<BillRow>={}):BillRow=>({account_id:aid,account_name:"Cartão",bill_id:bid,bill_status:"fechada_a_vencer",due_date:"2026-10-10",closing_date:"2026-10-01",card_last4:"1111",payment_status:"closed_unpaid",paid_at:null,payment_source:null,is_current:false,official:10000,computed:9500,subtotal:5500,paid:2000,remaining:8000,...changes})
+test("agrupa finais sem somar novamente o total oficial",()=>{const [bill]=groupBills([row(),row({card_last4:"2222",subtotal:4000})]);assert.equal(bill?.official,10000);assert.equal(bill?.cards.reduce((s,c)=>s+c.subtotal,0),9500)})
+test("seleção padrão usa o ciclo atual",()=>{const current=groupBills([row({bill_id:null,is_current:true,payment_status:"open"})])[0]!,closed=groupBills([row()])[0]!;assert.equal(selectCycles([closed,current],null).get(aid)?.key,current.key)})
+test("seleção válida escolhe a fatura solicitada e inválida volta à atual",()=>{const current=groupBills([row({bill_id:null,is_current:true,payment_status:"open"})])[0]!,closed=groupBills([row()])[0]!;assert.equal(selectCycles([current,closed],`${aid}:${bid}`).get(aid)?.billId,bid);assert.equal(selectCycles([current,closed],"inválido").get(aid)?.billId,null);assert.equal(parseBillSelection(`${aid}:${bid}`),`${aid}:${bid}`)})
+test("funciona com menos de três ciclos e preserva alerta não selecionado",()=>{const rows=[{...row({bill_id:null,is_current:true,payment_status:"open"}),cycle_rank:1},{...row(),cycle_rank:2}] as unknown as CycleRow[],cycles=groupRecentCycles(rows,[]),selected=selectCycles(cycles,null);assert.equal(cycles.length,2);assert.equal(selected.get(aid)?.isCurrent,true);assert.equal(cycles.filter(c=>isUnpaid(c.paymentStatus)).length,1)})
+test("parcial e vencida continuam na lista a pagar",()=>{assert.equal(isUnpaid("partially_paid"),true);assert.equal(isUnpaid("overdue"),true);assert.equal(isUnpaid("paid"),false)})

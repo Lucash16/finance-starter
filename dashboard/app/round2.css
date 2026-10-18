@@ -1,0 +1,488 @@
+.mobileHero {
+  background: linear-gradient(160deg, var(--purple) 0%, var(--purple-deep) 100%);
+  color: #fff;
+  border-radius: 0 0 28px 28px;
+  margin: -20px -18px 0;
+  padding: 22px 18px 28px;
+}
+
+.mobileHeroTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.mobileHeroUser {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.mobileHeroAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.2);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  border: 2px solid rgb(255 255 255 / 0.35);
+}
+
+.mobileHero h1 {
+  font-size: 1.15rem;
+  color: #fff;
+}
+
+.mobileHero .updated {
+  color: rgb(255 255 255 / 0.72);
+  font-size: 0.7rem;
+  margin-top: 2px;
+}
+
+.monthPill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.18);
+  white-space: nowrap;
+}
+
+.mobileHeroLabel {
+  font-size: 0.82rem;
+  color: rgb(255 255 255 / 0.78);
+  margin: 0;
+}
+
+.mobileHeroValue {
+  font-size: clamp(2.35rem, 11vw, 2.85rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin: 4px 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.mobileHeroSub {
+  font-size: 0.78rem;
+  color: rgb(255 255 255 / 0.82);
+  margin: 0;
+}
+
+.hScrollCards {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 14px 0 6px;
+  margin: 0 -4px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.summaryCard {
+  flex: 0 0 148px;
+  scroll-snap-align: start;
+  background: var(--card);
+  border-radius: 20px;
+  padding: 14px 14px 16px;
+  box-shadow: 0 12px 32px -18px rgb(123 63 228 / 0.35);
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 4px;
+}
+
+.summaryCard span {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 650;
+}
+
+.summaryCard strong {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.summaryCard small {
+  font-size: 0.68rem;
+}
+
+.summaryCard.accent {
+  background: var(--purple-soft);
+  border-color: #d8c9f5;
+}
+
+.trendUp {
+  color: #059669;
+}
+
+.trendDown {
+  color: #dc2626;
+}
+
+.pendingCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.pendingCardBody {
+  flex: 1 1 180px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-width: 0;
+}
+
+.pendingCardBody strong {
+  display: block;
+  font-size: 0.92rem;
+}
+
+.pendingCardBody > div > span {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.pendingAmount {
+  font-weight: 800;
+  color: var(--ink) !important;
+  margin-top: 4px !important;
+}
+
+.pendingStatus {
+  margin-left: auto;
+  max-width: 100%;
+}
+
+.pendingStatus .badge {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.budgetOverview {
+  margin-top: 14px;
+  margin-bottom: 16px;
+}
+
+.sectionTitleSm {
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+.budgetCols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  text-align: left;
+  margin-bottom: 14px;
+}
+
+.budgetCols span {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+.budgetCols strong {
+  display: block;
+  font-size: 0.92rem;
+  margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.budgetBar {
+  height: 9px;
+  background: var(--purple-soft);
+}
+
+.trackBadge {
+  margin: 12px 0 0;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0;
+}
+
+.trackBadge.good {
+  background: transparent;
+  color: #047857;
+}
+
+.trackBadge.warn {
+  background: var(--warn-soft);
+  color: #92400e;
+}
+
+.chartSummary {
+  font-size: 0.85rem;
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+.chartSummary strong {
+  color: var(--ink);
+}
+
+.txList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.txList li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.txList li:last-child {
+  border-bottom: 0;
+}
+
+.txAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.txListBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.txListBody strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.txListBody span {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.txListAmount {
+  text-align: right;
+}
+
+.txListAmount b {
+  display: block;
+  font-variant-numeric: tabular-nums;
+}
+
+.txListAmount small {
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.categoryBlock {
+  display: grid;
+  gap: 8px;
+}
+
+.donutWrap {
+  position: relative;
+  min-width: 0;
+  height: 220px;
+}
+
+.donutCenter {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.donutCenter strong {
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.donutCenter span {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.categoryRows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.categoryRowHead {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.categoryPct {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--muted);
+  min-width: 2.5rem;
+}
+
+.categoryBar {
+  height: 8px;
+  background: var(--purple-soft);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.categoryBar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.categoryRowMeta {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+
+.rowList li {
+  align-items: center;
+}
+
+.rowList li > div:first-of-type {
+  flex: 1;
+}
+
+@media (min-width: 900px) {
+  .mobileHero {
+    margin: 0 0 8px;
+    border-radius: var(--radius-lg);
+  }
+}
+
+.surfaceCard > h2 {
+  margin-bottom: 10px;
+  font-weight: 650;
+}
+
+.chartSummary {
+  font-size: 0.75rem;
+}
+
+.categoryRows li + li {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.categoryRowHead strong {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hScrollCards {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+.previewShell .content {
+  margin-left: 0;
+}
+
+@media (max-width: 380px) {
+  .mobileHeroTop { gap: 8px; }
+  .mobileHeroUser { gap: 8px; }
+  .mobileHero h1 { font-size: 1rem; }
+  .monthPill { padding: 8px; font-size: 0.65rem; }
+  .budgetCols strong { font-size: 0.8rem; }
+  .navLink { padding-inline: 3px; }
+}
+
+/* Keep the avatar layout independent of surrounding text styles. */
+.txAvatar, .rowList .txAvatar {
+  display: grid;
+  place-items: center;
+  margin: 0;
+}
+.txAvatar svg { display: block; width: 24px; height: 24px; }
+.pendingCardBody > div, .rowList li > div, .txList li > div { min-width: 0; }
+.pendingCardBody strong, .rowList strong, .txListBody strong { overflow-wrap: anywhere; }
+.pendingCardBody > div > span:not(.pendingAmount), .rowList li > div > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.creditLimitCard { min-width: 0; }
+.creditLimitCard h3 { font-size: 1rem; }
+.creditLimitCard p { font-size: .78rem; }
+.creditLimitCard strong { display: block; color: var(--ink); }
+.creditLimitCard .progressBar { margin-block: 12px; }
+@media (max-width: 899px) {
+  .pageHeader, .dashHeader { flex-direction: column; align-items: stretch; gap: 8px; }
+  .pageHeader { padding-inline: 0; }
+  .pageHeader > div, .pageHeader .updated { width: 100%; min-width: 0; }
+  .updated { white-space: normal; overflow-wrap: anywhere; }
+  .mobileHeroTop { flex-wrap: wrap; }
+  .mobileHeroUser { min-width: 0; }
+  .mobileHeroAvatar { flex-shrink: 0; }
+  .limitGrid { grid-template-columns: minmax(0, 1fr); }
+  .bill, .billCardBody { flex-wrap: wrap; }
+  .bill > div, .billCardMeta, .billCardAmount { min-width: 0; max-width: 100%; }
+  .sectionHead { flex-wrap: wrap; }
+}
+main, .content, .panel, .surfaceCard, .transaction > div { min-width: 0; }
+.panel, .billCard, .transaction, dd { overflow-wrap: anywhere; }
+input[type="date"] {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+}
+input[type="date"]::-webkit-date-and-time-value { min-width: 0; text-align: left; }
+
+/* Mobile bank refresh feedback stays above the floating tab-bar control. */
+.mobileHeroTop { flex-wrap: wrap; }
+.mobileHeroActions { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; }
+.syncHeaderActions { min-width: 0; display: grid; gap: 8px; }
+.navFab:hover:not(:disabled) { background: var(--purple-deep); }
+.navFab:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
+.navFab:disabled { opacity: .75; cursor: wait; }
+.navRefreshSpin { animation: navRefreshSpin .8s linear infinite; }
+.navRefreshToast {
+  position: fixed; z-index: 21;
+  bottom: calc(104px + env(safe-area-inset-bottom, 0px));
+  left: 16px; right: 16px; width: fit-content; max-width: calc(100% - 32px);
+  margin: 0 auto; padding: 12px 16px; border-radius: 12px;
+  background: var(--purple-deep); color: #fff;
+  font-size: .875rem; line-height: 1.5; overflow-wrap: anywhere;
+  max-height: calc(100dvh - 144px - env(safe-area-inset-bottom, 0px)); overflow-y: auto;
+}
+.navRefreshToast:empty { display: none; }
+@keyframes navRefreshSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .navRefreshSpin { animation: none; } }
